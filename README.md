@@ -9,7 +9,7 @@ ROS nodes written in python are sometimes suffered from performance
 problem, and cython can be a solution.
 
 This package is simplified and self-contained, so I think it is easy
-to re-use for your onw ROS package.
+to re-use for your own ROS package.
 
 ## Quick start
 
@@ -23,13 +23,18 @@ On another terminal:
 
 ```
 $ rosservice list
+/add_two_ints
+/fibonacci
+/mul_two_ints
+/sub_two_ints
 
 $ rosservice call /add_two_ints  1 2
 result: 3
 ```
 
-Now the first terminal screen says the server invoked the function
-'add_two_ints' of python version (src/ros_cython_example/add_two_ints.py).
+Now the first terminal screen says the server invoked the python
+version function of
+'add_two_ints'(src/ros_cython_example/add_two_ints.py).
 
 Try another service call as:
 ```
@@ -37,8 +42,8 @@ $ rosservice call /fibonacci 10
 result: 55.0
 ```
 
-Now the first terminal screen says the server invoked the function
-'fibonacci' of C version(src/fibonacci.c). The C code are called from
+Now the first terminal screen says the server invoked the C version
+function of 'fibonacci'(src/fibonacci.c). The C code are called from
 python by cython framework.
 
 You can easily switch the function version between C and python, by
@@ -54,7 +59,7 @@ server has four services:
 - mul_two_ints
 - fibonacci
 
-Each service is correspoinding to a function, and the functions are
+Each service is corresponding to a function, and the functions are
 (originally) written in python files in the package directory
 (src/ros_cython_example).
 
