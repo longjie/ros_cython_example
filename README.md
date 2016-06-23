@@ -6,8 +6,10 @@ This package is an example of ROS package with cython. Cython is an
 great framework to couple python and C very easily.
 
 ROS nodes written in python are sometimes suffered from performance
-problem, and cython can be a solution. This package show an example
-how to use cython in ROS package.
+problem, and cython can be a solution.
+
+This package is simplified and self-contained, so I think it is easy
+to re-use for your onw ROS package.
 
 ## Quick start
 
@@ -56,9 +58,8 @@ Each service is correspoinding to a function, and the functions are
 (originally) written in python files in the package directory
 (src/ros_cython_example).
 
-Assume you want to re-implement 'mul_two_ints' and 'fibonacci' in C
-because some reason such as performance. The functions are implemented
-in C in:
+Assume we want to re-implement 'mul_two_ints' and 'fibonacci' in C
+because of performance reason. The functions are implemented in C in files:
 
 - src/mul_two_ints.c
 - src/fibonacci.c
@@ -71,13 +72,13 @@ wrapper codes are src/cython/*.pyx.
 
 For example, mul_two_ints.pyx is:
 
-'''
+```
 cdef extern from "ros_cython_example/mul_two_ints.h":
     int c_mul_two_ints(int a, int b)
 
 def mul_two_ints(a, b):
     return c_mul_two_ints(a, b)
-'''
+```
 
 The cmake files (src/cython/CMakeLists.txt and top level
 CMakeLists.txt) specify how to compile cython codes.
@@ -86,7 +87,7 @@ The contents of cmake/ directory is from
 [cython_cmake_example](https://github.com/thewtex/cython-cmake-example)
 project.
 
-## Thanks
+## Thanks to
 
 * [cython_catkin_example](https://github.com/marcoesposito1988/cython_catkin_example)
   by @marcoesposito1988
@@ -97,8 +98,8 @@ project.
 
 This package owes much to the
 [cython_catkin_example](https://github.com/marcoesposito1988/cython_catkin_example)
-project. I try to show another simplified and extendable example to
-fit actual ROS usage.
+project. I just want to show another simplified and extendable example
+to fit actual ROS usage.
 
 In this example, I assume fairly standard ROS package contents as follows:
 
