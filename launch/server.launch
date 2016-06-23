@@ -1,0 +1,3 @@
+<launch>
+  <node name="server" pkg="ros_cython_example" type="server.py" output="screen"/>
+</launch>
