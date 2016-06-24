@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This package is an example of ROS package with cython. Cython is an
+This package is an example of ROS package with cython. Cython is 
 great framework to couple python and C very easily.
 
 ROS nodes written in python are sometimes suffered from performance
@@ -44,7 +44,7 @@ result: 55.0
 
 Now the first terminal screen says the server invoked the C version
 function of 'fibonacci'(src/fibonacci.c). The C code are called from
-python by cython framework.
+python through cython framework.
 
 You can easily switch the function version between C and python, by
 modifing the CMakeLists.txt and rebuild the package.
