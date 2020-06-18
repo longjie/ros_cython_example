@@ -21,6 +21,6 @@ if __name__ == "__main__":
     rospy.Service('sub_two_ints', SubTwoInts, handle_sub_two_ints)
     rospy.Service('mul_two_ints', MulTwoInts, handle_mul_two_ints)
     rospy.Service('fibonacci', Fibonacci, handle_fibonacci)
-    print "Server is ready."
+    print("Server is ready.")
     rospy.spin()
 
